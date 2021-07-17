@@ -13,7 +13,7 @@ app.use(express.json({ extended: false }));
 dotenv.config({ path: './.env' });
 
 const mongoose = require('mongoose');
-const db = process.env.DATABASE;
+const db = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@mongodb-test-4d191b39.mongo.ondigitalocean.com/telmo_academy?authSource=admin&replicaSet=mongodb-test&tls=true&tlsCAFile=./ca-certificate.crt`
 console.log(db);
 const connectDB = async () => {
     try {
