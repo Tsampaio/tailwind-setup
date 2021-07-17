@@ -1,4 +1,7 @@
 const express = require('express');
+const dotenv = require('dotenv');
+
+const path = require('path');
 
 const app = express();
 
@@ -29,6 +32,8 @@ const connectDB = async () => {
         process.exit(1);
     }
 }
+
+connectDB()
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 
